@@ -30,7 +30,7 @@ RUN set -eux; \
 
 
 # fyne-cross image for linux
-FROM fyneio/fyne-cross-images:${FYNE_CROSS_IMAGES_VERSION}-base
+FROM ${FYNE_CROSS_REPOSITORY}:${FYNE_CROSS_IMAGES_VERSION}-base
 
 COPY --from=build /build/zig-out/bin /usr/local/bin
 
