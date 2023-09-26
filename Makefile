@@ -1,9 +1,9 @@
 .PHONY: all base android darwin darwin-sdk-extractor freebsd linux windows web
 
 # VERSION is the Fyne Cross Images version
-VERSION := "1.1.3"
+VERSION := "0.0.1"
 # REPOSITORY is the docker repository
-REPOSITORY := docker.io/fyneio/fyne-cross-images
+REPOSITORY := enerdhil/rps-builder
 # RUNNER is the CLI used to interact with docker or podman
 RUNNER := $(shell 2>/dev/null 1>&2 docker version && echo "docker" || echo "podman")
 
@@ -15,7 +15,7 @@ base: .base
 
 android: .android
 .android: .base android/Dockerfile
-	@$(RUNNER) build --arch=amd64 --build-arg FYNE_CROSS_IMAGES_VERSION=${VERSION} --build-arg FYNE_CROSS_REPOSITORY=${REPOSITORY} -f ${CURDIR}/android/Dockerfile -t ${REPOSITORY}:${VERSION}-android .
+	@$(RUNNER) build --build-arg FYNE_CROSS_IMAGES_VERSION=${VERSION} --build-arg FYNE_CROSS_REPOSITORY=${REPOSITORY} -f ${CURDIR}/android/Dockerfile -t ${REPOSITORY}:${VERSION}-android .
 	@$(RUNNER) tag ${REPOSITORY}:${VERSION}-android ${REPOSITORY}:android
 	@touch .android
 
