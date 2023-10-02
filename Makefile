@@ -1,7 +1,7 @@
 .PHONY: all base android darwin darwin-sdk-extractor freebsd linux windows web
 
 # VERSION is the Fyne Cross Images version
-VERSION := "0.0.1"
+VERSION := "0.0.2"
 # REPOSITORY is the docker repository
 REPOSITORY := enerdhil/rps-builder
 # RUNNER is the CLI used to interact with docker or podman
