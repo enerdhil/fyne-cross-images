@@ -11,6 +11,7 @@ RUN set -eux; \
     dpkg --add-architecture i386; \
     apt-get update; \
     apt-get install -y -q --no-install-recommends \
+        libpcap-dev:amd64 \
         libgl-dev:amd64 \
         libx11-dev:amd64 \
         libxrandr-dev:amd64 \
@@ -22,6 +23,7 @@ RUN set -eux; \
         libxkbcommon-dev:amd64 \
     ; \
     apt-get install -y -q --no-install-recommends \
+        libpcap-dev:arm64 \
         libgl-dev:arm64 \
         libx11-dev:arm64 \
         libxrandr-dev:arm64 \
@@ -33,6 +35,7 @@ RUN set -eux; \
         libxkbcommon-dev:arm64 \
     ; \
     apt-get install -y -q --no-install-recommends \
+        libpcap-dev:armhf \
         libgl-dev:armhf \
         libx11-dev:armhf \
         libxrandr-dev:armhf \
@@ -44,6 +47,7 @@ RUN set -eux; \
         libxkbcommon-dev:armhf \
     ; \
     apt-get install -y -q --no-install-recommends \
+        libpcap-dev:i386 \
         libgl-dev:i386 \
         libx11-dev:i386 \
         libxrandr-dev:i386 \
